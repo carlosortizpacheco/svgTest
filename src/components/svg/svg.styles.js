@@ -3,7 +3,15 @@ import styled, { keyframes } from 'styled-components'
 
 
 const animationNone = keyframes `
+from {
+  fill-opacity:0;
+  opacity: 0;
+}
 
+to {
+  fill-opacity: 0;
+  opacity: 0;
+}
 `
 
 const animationLine = keyframes `
