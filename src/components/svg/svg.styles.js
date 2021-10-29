@@ -1,5 +1,11 @@
 import styled, { keyframes } from 'styled-components'
 
+
+
+const animationNone = keyframes `
+
+`
+
 const animationLine = keyframes `
 
   to {
@@ -35,6 +41,12 @@ const animationFill2 = keyframes `
 `
 
 
+export const Div = styled.div `
+  height: 700px;
+
+`
+
+
 export const Container = styled.div `
   display: flex;
   justify-content: center;
@@ -51,7 +63,7 @@ export const SvgClock = styled.svg `
 
   > path:nth-child(1) {
     fill: #F7E6BA;
-    animation: ${animationFill} 2.5s linear backwards;
+    animation: ${props => props.isIntersecting ? animationFill : animationNone} 2.5s linear backwards;
   }
 
   > line:nth-child(2),
@@ -68,30 +80,30 @@ export const SvgClock = styled.svg `
   > line:nth-child(2) {
     stroke-dasharray: 95px;
     stroke-dashoffset: 95px;
-    animation: ${animationLine} 1s linear forwards;
+    animation: ${props => props.isIntersecting ? animationLine : animationNone} 1s linear forwards;
   }
 
   > line:nth-child(3) {
     stroke-dasharray: 35px;
     stroke-dashoffset: 35px;
-    animation: ${animationLine} 1s linear forwards;
+    animation: ${props => props.isIntersecting ? animationLine : animationNone} 1s linear forwards;
   }
 
   > line:nth-child(4) {
     stroke-dasharray: 35px;
     stroke-dashoffset: 35px;
-    animation: ${animationLine} 1s linear forwards;
+    animation: ${props => props.isIntersecting ? animationLine : animationNone} 1s linear forwards;
   }
 
   > line:nth-child(5) {
     stroke-dasharray: 110px;
     stroke-dashoffset: 110px;
-    animation: ${animationLine} 1s linear forwards;
+    animation: ${props => props.isIntersecting ? animationLine : animationNone} 1s linear forwards;
   }
 
   > circle:nth-child(6) {
     fill: #FFFFFF;
-    animation: ${animationFill} 2.5s linear backwards;
+    animation: ${props => props.isIntersecting ? animationFill : animationNone} 2.5s linear backwards;
   }
   
   > path:nth-child(7) {
@@ -101,7 +113,7 @@ export const SvgClock = styled.svg `
     stroke-miterlimit: 10;
     stroke-dasharray: 780px;
     stroke-dashoffset: 780px;
-    animation: ${animationLine} 2s linear forwards;
+    animation: ${props => props.isIntersecting ? animationLine : animationNone} 2s linear forwards;
   }
 
 `
@@ -115,14 +127,14 @@ export const SvgCart = styled.svg `
   > circle:nth-child(2),
   > circle:nth-child(3) {
     fill: #F7E6BA;
-    animation: ${animationFill} 1s linear forwards;
+    animation: ${props => props.isIntersecting ? animationFill : animationNone} 1s linear forwards;
   }
 
   > path:nth-child(4),
   > path:nth-child(7),
   > path:nth-child(8) {
     fill: #021855;
-    animation: ${animationFill2} 2s linear forwards;
+    animation: ${props => props.isIntersecting ? animationFill2 : animationNone} 2s linear forwards;
     transform-origin: initial;
   }
 
@@ -135,7 +147,7 @@ export const SvgCart = styled.svg `
     stroke-miterlimit: 10;
     stroke-dasharray: 780px;
     stroke-dashoffset: 780px;
-    animation: ${animationLine} 2s linear forwards;
+    animation: ${props => props.isIntersecting ? animationLine : animationNone} 2s linear forwards;
   }
 
 `
@@ -153,19 +165,19 @@ export const SvgCommunication = styled.svg `
     stroke-miterlimit:10;
     stroke-dasharray: 780px;
     stroke-dashoffset: 780px;
-    animation: ${animationLine} 3s linear forwards;
+    animation: ${props => props.isIntersecting ? animationLine : animationNone} 3s linear forwards;
   }
 
   > g {
     > path:nth-child(1) {
       fill:#021855;
-      animation: ${animationFill} 2s linear forwards;
+      animation: ${props => props.isIntersecting ? animationFill : animationNone} 2s linear forwards;
       transform-origin: initial;
     }
 
     > path:nth-child(2) {
       fill:#F7E6BA;
-      animation: ${animationFill} 2s linear forwards;
+      animation: ${props => props.isIntersecting ? animationFill : animationNone} 2s linear forwards;
       transform-origin: initial;
     }
   }
