@@ -3,14 +3,12 @@ import styled, { keyframes } from 'styled-components'
 
 
 const animationNone = keyframes `
-from {
-  fill-opacity:0;
-  opacity: 0;
-}
+
 
 to {
   fill-opacity: 0;
   opacity: 0;
+  stroke-opacity: 0;
 }
 `
 
@@ -71,7 +69,7 @@ export const SvgClock = styled.svg `
 
   > path:nth-child(1) {
     fill: #F7E6BA;
-    animation: ${props => props.isIntersecting ? animationFill : animationNone} 2.5s linear backwards;
+    animation: ${props => props.isIntersecting ? animationFill : animationNone} 2.5s linear forwards;
   }
 
   > line:nth-child(2),
@@ -111,7 +109,7 @@ export const SvgClock = styled.svg `
 
   > circle:nth-child(6) {
     fill: #FFFFFF;
-    animation: ${props => props.isIntersecting ? animationFill : animationNone} 2.5s linear backwards;
+    animation: ${props => props.isIntersecting ? animationFill : animationNone} 2.5s linear forwards;
   }
   
   > path:nth-child(7) {
